@@ -1,0 +1,8 @@
+bonds <- read.delim("bonds (1).txt",row.names = 1)
+View(bonds)
+head(bonds)
+tail(bonds)
+summary(bonds)
+plot(bonds$CouponRate,bonds$BidPrice,main="Bid Prics vs Coupon Rate",xlab="CouponRate",ylab="BidPrice")
+bondsmod <- lm(BidPrice~CouponRate,data = bonds)
+abline(bondsmod)
